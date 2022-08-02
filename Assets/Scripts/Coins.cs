@@ -17,6 +17,7 @@ public class Coins : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other){
        if(other.tag == "Player") {
+         FindObjectOfType<AudioManager>().PlaySound("PickUpCoin");
         PlayerManager.numberOfCoins += 1;
         Debug.Log("Coins:"+ PlayerManager.numberOfCoins);
         Destroy(gameObject);

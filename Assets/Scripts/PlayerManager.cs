@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
   
     public static bool isGameStarted;
     public GameObject startingText;
+    public GameObject turulecaExplorer;
     public static int numberOfCoins;
     public Text coinsText;
     void Start()
@@ -30,6 +31,7 @@ public class PlayerManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)){
             isGameStarted = true;
             Destroy (startingText);
+            Destroy (turulecaExplorer);
         }
     }
 }

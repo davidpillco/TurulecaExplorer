@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 4a443cbb7b6fccd4d8046b923afeb75c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Cartoo Nature
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a1de44fa8e8e6844daed32904b9d46fb, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
