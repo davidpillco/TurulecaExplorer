@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Vector3 direction;
     public float forwardSpeed;
+    public float maxSpeed;
 
     private int desiredLane = 1;
     public float laneDistance =4;
@@ -24,7 +25,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(forwardSpeed);
+        if(!PlayerManager.isGameStarted)
+            return;
+        if(forwardSpeed < maxSpeed)
+            forwardSpeed+= 0.1f * Time.deltaTime;
+        //Debug.Log(forwardSpeed);
         direction.z = forwardSpeed;
         direction.y += Gravity * Time.deltaTime;
 
@@ -65,10 +70,17 @@ public class PlayerController : MonoBehaviour
 
     }
     private void FixedUpdate(){
+        if(!PlayerManager.isGameStarted)
+            return;
         controller.Move(direction*Time.deltaTime);
     }
 
     private void Jump(){
         direction.y = jumpForce;
+    }
+    private void OnControllerColliderHit(ControllerColliderHit hit){
+        if(hit.transform.tag == "Obstacle"){
+            PlayerManager.gameOver = true;
+        }
     }
 }
