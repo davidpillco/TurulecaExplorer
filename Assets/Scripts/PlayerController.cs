@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(forwardSpeed);
         direction.z = forwardSpeed;
         direction.y += Gravity * Time.deltaTime;
 
@@ -59,11 +60,12 @@ public class PlayerController : MonoBehaviour
         }      
 
         transform.position = targetPosition;
+        controller.center = controller.center;
        
 
     }
     private void FixedUpdate(){
-        controller.Move(direction*Time.fixedDeltaTime);
+        controller.Move(direction*Time.deltaTime);
     }
 
     private void Jump(){
